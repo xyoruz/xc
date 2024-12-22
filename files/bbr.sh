@@ -1,7 +1,7 @@
 #!/bin/bash
-# Edition : Stable Edition V3.0
-# Auther  : Tomket
-# (C) Copyright 2023
+# Edition : Stable Edition V3.5
+# Auther  : FREE TUNNEL
+# (C) Copyright 2024 - 2025
 # =========================================
 
 red='\e[1;31m'
