@@ -38,14 +38,6 @@ res1() {
     bash fv-tunnel
     rm -rf fv-tunnel
 }
-function noobzvpn() {
-wget "${REPO}/noobzvpns.zip"
-unzip noobzvpns.zip
-bash install.sh
-rm noobzvpns.zip
-systemctl restart noobzvpns
-print_success "NOOBZVPN"
-}
 netfilter-persistent
 clear
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
