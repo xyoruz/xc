@@ -327,10 +327,10 @@ TIMEZONE=$(printf '%(%H:%M:%S)T')
 <code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>────────────────────</code>
-<b> TOMKET VPN STORE SCRIPT  </b>
+<b> FREE TUNNEL VPN SCRIPT  </b>
 <code>────────────────────</code>
 <i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/Yeniwei"}]]}' 
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/kajavsna"}]]}' 
 
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
