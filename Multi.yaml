@@ -51,16 +51,16 @@ proxies:
     server: poe.garena.com
     port: 443
     type: vless
-    uuid: c1155aa8-f7ac-49e6-9437-68a127b5ae2f
+    uuid: 65086c8f-64eb-4e8f-897c-9b141ebcfe83
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: poe.garena.com.aio.nolimit.dpdns.org
+    servername: poe.garena.com.xaillavpn.my.id
     network: ws
     ws-opts:
-      path: /aioproxybot/103.6.207.108-8080
+      path: /xailllastore
       headers:
-        Host: poe.garena.com.aio.nolimit.dpdns.org
+        Host: poe.garena.com.xaillavpn.my.id
     udp: true
 proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
