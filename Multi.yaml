@@ -48,19 +48,19 @@ proxies:
         Host: quiz.int.vidio.com.aio.nolimit.dpdns.org
     udp: true
   - name: vid 🇷🇺
-    server: quiz.int.vidio.com
+    server: poe.garena.com
     port: 443
     type: vless
     uuid: c1155aa8-f7ac-49e6-9437-68a127b5ae2f
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: quiz.int.vidio.com.aio.nolimit.dpdns.org
+    servername: aio.nolimit.dpdns.org
     network: ws
     ws-opts:
       path: /aioproxybot/103.6.207.108-8080
       headers:
-        Host: quiz.int.vidio.com.aio.nolimit.dpdns.org
+        Host: aio.nolimit.dpdns.org
     udp: true
 proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
