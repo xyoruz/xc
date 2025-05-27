@@ -55,12 +55,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: aio.nolimit.dpdns.org
+    servername: poe.garena.com.aio.nolimit.dpdns.org
     network: ws
     ws-opts:
       path: /aioproxybot/103.6.207.108-8080
       headers:
-        Host: aio.nolimit.dpdns.org
+        Host: poe.garena.com.aio.nolimit.dpdns.org
     udp: true
 proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
