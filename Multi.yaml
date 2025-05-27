@@ -1,0 +1,107 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: vid 🇮🇩
+    server: quiz.int.vidio.com
+    port: 443
+    type: vless
+    uuid: c1155aa8-f7ac-49e6-9437-68a127b5ae2f
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.aio.nolimit.dpdns.org
+    network: ws
+    ws-opts:
+      path: /aioproxybot/103.6.207.108-8080
+      headers:
+        Host: quiz.int.vidio.com.aio.nolimit.dpdns.org
+    udp: true
+  - name: vid 🇷🇺
+    server: quiz.int.vidio.com
+    port: 443
+    type: vless
+    uuid: c1155aa8-f7ac-49e6-9437-68a127b5ae2f
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.aio.nolimit.dpdns.org
+    network: ws
+    ws-opts:
+      path: /aioproxybot/103.6.207.108-8080
+      headers:
+        Host: quiz.int.vidio.com.aio.nolimit.dpdns.org
+    udp: true
+proxy-groups:
+  - name: FASTSSH-SSHKIT-HOWDY
+    type: select
+    proxies:
+      - vid 🇮🇩
+      - vid 🇷🇺
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - vid 🇮🇩
+      - vid 🇷🇺
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - vid 🇮🇩
+      - vid 🇷🇺
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - vid 🇮🇩
+      - vid 🇷🇺
+rule-providers:
+  clash:
+    type: http
+    behavior: domain
+    url: https://howdy.id/download/rules/clash.txt
+    path: ./providers/rule-provider_clash.yaml
+    interval: 86400
+rules:
+  - RULE-SET,clash,REJECT
+  - MATCH,FASTSSH-SSHKIT-HOWDY
